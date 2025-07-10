@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Integrating SOLIDWORKS & JD Edwards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .kpi-number {
+            font-weight: 900;
+            color: #EF5675;
+        }
+        .section-title {
+            font-weight: 700;
+            color: #003F5C;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+         @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-center section-title">Strategic Integration: SOLIDWORKS & JD Edwards</h1>
+            <p class="text-center text-gray-500 mt-1">A Visual Guide for Custom Lighting Manufacturers</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="problem" class="text-center my-12">
+            <h2 class="text-3xl md:text-4xl section-title mb-4">The High Cost of Disconnection</h2>
+            <p class="max-w-3xl mx-auto mb-8 text-lg">The manual transfer of data from engineering to the rest of the business creates a drag on your agility. It's a hidden cost that impacts your entire operation, from design innovation to the bottom line.</p>
+            <div class="card p-8 max-w-md mx-auto">
+                <p class="text-lg text-gray-600">Engineers can spend up to</p>
+                <p class="text-7xl md:text-8xl kpi-number my-2">20%</p>
+                <p class="text-lg text-gray-600">of their time on manual data entry for Bills of Materials (BOMs)—time that could be spent on value-added engineering.</p>
+            </div>
+        </section>
+
+        <div class="w-full border-t border-gray-200 my-16"></div>
+
+        <section id="transformation" class="my-12">
+            <h2 class="text-3xl md:text-4xl section-title text-center mb-4">The Core Challenge: Bridging Two Worlds</h2>
+            <p class="max-w-3xl mx-auto text-center mb-12 text-lg">A successful integration is more than a data link; it's a translation process. It intelligently transforms the design-focused Engineering BOM (eBOM) into a comprehensive Manufacturing BOM (mBOM) that the entire enterprise can use.</p>
+            
+            <div class="card p-6 md:p-8">
+                <div class="flex flex-col md:flex-row items-center justify-around gap-8">
+                    <div class="w-full md:w-1/3 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: #7A5195;">eBOM (Engineering)</h3>
+                        <p class="text-sm mb-4">The "what" - functional design structure from SOLIDWORKS.</p>
+                        <div class="border-2 border-gray-200 rounded-lg p-4 bg-gray-50">
+                            <p class="font-semibold">Custom Pendant Light</p>
+                            <ul class="list-disc list-inside text-left ml-4 mt-2 text-sm">
+                                <li>Canopy Assembly</li>
+                                <li>Stem (36")</li>
+                                <li>Socket Assembly</li>
+                                <li>Glass Shade</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-5xl font-thin text-center" style="color: #EF5675;">&rarr;</div>
+                    
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-semibold mb-2 text-center md:text-left" style="color: #FFA600;">mBOM (Manufacturing)</h3>
+                        <p class="text-sm mb-4 text-center md:text-left">The "how" - the complete recipe for JD Edwards, including raw materials, purchased parts, and labor steps.</p>
+                        <div class="border-2 border-gray-200 rounded-lg p-4 bg-gray-50">
+                            <p class="font-semibold">Custom Pendant Light</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2 text-sm">
+                                <div>
+                                    <p class="font-bold">Items:</p>
+                                    <ul class="list-disc list-inside text-left ml-4">
+                                        <li>Canopy (Manufactured)</li>
+                                        <li>Stem (Manufactured)</li>
+                                        <li>Socket (Purchased)</li>
+                                        <li>Wire (Purchased)</li>
+                                        <li>Shade (Purchased)</li>
+                                        <li>Fasteners (Purchased)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Raw Materials & Routings:</p>
+                                    <ul class="list-disc list-inside text-left ml-4">
+                                        <li>Brass Sheet (for Canopy)</li>
+                                        <li>Brass Tube (for Stem)</li>
+                                        <li><span class="text-blue-600">Routing:</span> Stamping</li>
+                                        <li><span class="text-blue-600">Routing:</span> Cutting</li>
+                                        <li><span class="text-blue-600">Routing:</span> Finishing</li>
+                                        <li><span class="text-blue-600">Routing:</span> Final Assembly</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full border-t border-gray-200 my-16"></div>
+
+        <section id="options" class="my-12">
+            <h2 class="text-3xl md:text-4xl section-title text-center mb-4">Comparing the Architectural Options</h2>
+            <p class="max-w-3xl mx-auto text-center mb-12 text-lg">There are three main ways to build the bridge between SOLIDWORKS and JD Edwards. Each has significant implications for cost, time, and maintenance.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 text-center">
+                    <div class="text-5xl mb-4">&#128736;</div>
+                    <h3 class="text-xl font-bold mb-2" style="color:#003F5C">Custom P2P</h3>
+                    <p>A completely custom-coded solution. Offers ultimate flexibility but at a very high cost in time, money, and ongoing maintenance. Very high risk.</p>
+                </div>
+                <div class="card p-6 text-center border-4" style="border-color: #FFA600;">
+                    <div class="text-5xl mb-4">&#129521;</div>
+                    <h3 class="text-xl font-bold mb-2" style="color:#003F5C">Dedicated Middleware</h3>
+                    <p>Purpose-built software (like CADTALK) designed to solve this exact problem. Intelligently transforms data with low risk and predictable costs. **(Recommended)**</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="text-5xl mb-4">&#9928;</div>
+                    <h3 class="text-xl font-bold mb-2" style="color:#003F5C">iPaaS Platform</h3>
+                    <p>A cloud-based "integration hub" (like Jitterbit or Boomi). Powerful and scalable for many integrations, but can be overkill and costly for this single, deep connection.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full border-t border-gray-200 my-16"></div>
+        
+        <section id="comparison" class="my-12">
+            <h2 class="text-3xl md:text-4xl section-title text-center mb-4">Solution Head-to-Head</h2>
+            <p class="max-w-3xl mx-auto text-center mb-12 text-lg">When we look at the numbers, a clear winner emerges for small, agile manufacturers. The dedicated middleware approach provides the best balance of capability, cost, and speed.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-center mb-4" style="color:#003F5C">Estimated Initial Cost</h3>
+                    <p class="text-center text-sm mb-4">Custom development is an order of magnitude more expensive than off-the-shelf solutions.</p>
+                    <div class="chart-container"><canvas id="costChart"></canvas></div>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-center mb-4" style="color:#003F5C">Estimated Implementation Timeline</h3>
+                    <p class="text-center text-sm mb-4">Get to ROI in months, not years. Dedicated middleware offers the fastest path to a live solution.</p>
+                    <div class="chart-container"><canvas id="timeChart"></canvas></div>
+                </div>
+                <div class="card p-6 lg:col-span-2">
+                    <h3 class="text-xl font-bold text-center mb-4" style="color:#003F5C">Suitability Score for Small ETO</h3>
+                    <p class="text-center text-sm mb-4">Based on features, risk, and total cost of ownership, dedicated middleware is the most suitable choice.</p>
+                    <div class="chart-container max-w-4xl"><canvas id="suitabilityChart"></canvas></div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="w-full border-t border-gray-200 my-16"></div>
+
+        <section id="roadmap" class="my-12">
+            <h2 class="text-3xl md:text-4xl section-title text-center mb-4">A Phased Path to Success</h2>
+             <p class="max-w-3xl mx-auto text-center mb-12 text-lg">A structured implementation ensures a smooth transition and rapid value realization. The total project timeline is typically 11 to 21 weeks.</p>
+             <div class="card p-6 md:p-8">
+                 <div class="relative">
+                     <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5" style="background-color:#FFA600;"></div>
+                     <div class="space-y-12">
+                         <div class="flex items-center w-full">
+                             <div class="hidden md:block w-5/12"></div>
+                             <div class="z-10 bg-white border-2 rounded-full w-8 h-8 flex items-center justify-center" style="border-color:#FFA600; margin-left: -15px; margin-right: 1rem;"><div class="w-3 h-3 rounded-full" style="background-color:#FFA600;"></div></div>
+                             <div class="bg-gray-50 rounded-lg shadow-sm p-4 w-full md:w-5/12">
+                                 <h4 class="font-bold" style="color:#7A5195;">Phase 1: Vetting & Selection</h4>
+                                 <p class="text-sm">Assemble team, conduct demos, and select the right vendor partner. (2-4 Weeks)</p>
+                             </div>
+                         </div>
+                         <div class="flex items-center w-full">
+                             <div class="hidden md:block w-5/12 text-right">
+                                 <h4 class="font-bold" style="color:#7A5195;">Phase 2: Data Prep & Mapping</h4>
+                                 <p class="text-sm">The most critical phase: cleanse data, map processes, and define business rules. (3-6 Weeks)</p>
+                             </div>
+                             <div class="z-10 bg-white border-2 rounded-full w-8 h-8 flex items-center justify-center" style="border-color:#FFA600; margin-left: -15px; margin-right: 1rem;"><div class="w-3 h-3 rounded-full" style="background-color:#FFA600;"></div></div>
+                             <div class="bg-gray-50 rounded-lg shadow-sm p-4 w-full md:w-5/12 md:hidden">
+                                 <h4 class="font-bold" style="color:#7A5195;">Phase 2: Data Prep & Mapping</h4>
+                                 <p class="text-sm">The most critical phase: cleanse data, map processes, and define business rules. (3-6 Weeks)</p>
+                             </div>
+                         </div>
+                          <div class="flex items-center w-full">
+                             <div class="hidden md:block w-5/12"></div>
+                             <div class="z-10 bg-white border-2 rounded-full w-8 h-8 flex items-center justify-center" style="border-color:#FFA600; margin-left: -15px; margin-right: 1rem;"><div class="w-3 h-3 rounded-full" style="background-color:#FFA600;"></div></div>
+                             <div class="bg-gray-50 rounded-lg shadow-sm p-4 w-full md:w-5/12">
+                                 <h4 class="font-bold" style="color:#7A5195;">Phase 3: Implementation & Testing</h4>
+                                 <p class="text-sm">The vendor configures the solution. Your team validates the data flow with real-world examples. (4-8 Weeks)</p>
+                             </div>
+                         </div>
+                         <div class="flex items-center w-full">
+                              <div class="hidden md:block w-5/12 text-right">
+                                 <h4 class="font-bold" style="color:#7A5195;">Phase 4: Go-Live & Support</h4>
+                                 <p class="text-sm">Train users, roll out the new process (phased approach recommended), and provide hypercare support. (2-3 Weeks)</p>
+                             </div>
+                             <div class="z-10 bg-white border-2 rounded-full w-8 h-8 flex items-center justify-center" style="border-color:#FFA600; margin-left: -15px; margin-right: 1rem;"><div class="w-3 h-3 rounded-full" style="background-color:#FFA600;"></div></div>
+                             <div class="bg-gray-50 rounded-lg shadow-sm p-4 w-full md:w-5/12 md:hidden">
+                                 <h4 class="font-bold" style="color:#7A5195;">Phase 4: Go-Live & Support</h4>
+                                 <p class="text-sm">Train users, roll out the new process (phased approach recommended), and provide hypercare support. (2-3 Weeks)</p>
+                             </div>
+                         </div>
+                         <div class="flex items-center w-full">
+                             <div class="hidden md:block w-5/12"></div>
+                             <div class="z-10 bg-white border-2 rounded-full w-8 h-8 flex items-center justify-center" style="border-color:#FFA600; margin-left: -15px; margin-right: 1rem;"><div class="w-3 h-3 rounded-full" style="background-color:#FFA600;"></div></div>
+                             <div class="bg-gray-50 rounded-lg shadow-sm p-4 w-full md:w-5/12">
+                                 <h4 class="font-bold" style="color:#7A5195;">Phase 5: Optimization</h4>
+                                 <p class="text-sm">Adopt agile data governance, measure ROI, and plan future enhancements. (Ongoing)</p>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <div class="w-full border-t border-gray-200 my-16"></div>
+
+        <section id="roi" class="my-12">
+            <h2 class="text-3xl md:text-4xl section-title text-center mb-4">The Strategic Value & Return</h2>
+            <p class="max-w-3xl mx-auto text-center mb-12 text-lg">This is more than an efficiency project; it's a foundational investment in your company's future, delivering a powerful and measurable return.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 text-center">
+                    <h3 class="font-bold text-lg mb-2" style="color: #003F5C">1st Year Savings</h3>
+                    <p class="text-sm mb-4">Estimated savings from reduced scrap, rework, and late shipments with a dedicated connector.</p>
+                    <p class="text-6xl kpi-number">$44,000</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <h3 class="font-bold text-lg mb-2" style="color: #003F5C">Procurement ROI</h3>
+                    <p class="text-sm mb-4">Better data and more efficient processes lead to dramatic gains in procurement.</p>
+                    <div class="chart-container h-48 sm:h-56"><canvas id="roiChart"></canvas></div>
+                </div>
+                 <div class="card p-6 text-center md:col-span-2 lg:col-span-1">
+                    <h3 class="font-bold text-lg mb-2" style="color: #003F5C">General ERP Return</h3>
+                    <p class="text-sm mb-4">For every dollar invested in ERP technology, manufacturers see an average return of:</p>
+                    <p class="text-6xl kpi-number">$7.23</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-white mt-16">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+            <p>&copy; 2025 Strategic Integration Analysis. All data synthesized from the report on SOLIDWORKS and JD Edwards integration.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const colorPalette = {
+                primary: '#003F5C',
+                secondary: '#7A5195',
+                accent1: '#EF5675',
+                accent2: '#FFA600',
+                background: 'rgba(0, 63, 92, 0.2)',
+                border: '#003F5C'
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const commonOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        },
+                        backgroundColor: '#003F5C',
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        cornerRadius: 4,
+                        displayColors: false
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: colorPalette.primary,
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: colorPalette.primary,
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: '#e0e6ed'
+                        }
+                    }
+                }
+            };
+            
+            function wrapLabel(str, maxLen = 16) {
+                if (str.length <= maxLen) {
+                    return str;
+                }
+                const words = str.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length > maxLen && currentLine.length > 0) {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    } else {
+                        currentLine += (currentLine ? ' ' : '') + word;
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            }
+
+
+            const costCtx = document.getElementById('costChart');
+            if(costCtx) {
+                new Chart(costCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: [wrapLabel('Custom P2P'), wrapLabel('iPaaS (Jitterbit)'), wrapLabel('Dedicated Middleware (CADTALK)')],
+                        datasets: [{
+                            label: 'Estimated Initial Cost',
+                            data: [180000, 30000, 17000],
+                            backgroundColor: [colorPalette.accent1, colorPalette.accent2, colorPalette.secondary],
+                            borderRadius: 4
+                        }]
+                    },
+                    options: { ...commonOptions,
+                        scales: { ...commonOptions.scales, 
+                            y: { ...commonOptions.scales.y, 
+                                ticks: { ...commonOptions.scales.y.ticks, callback: (value) => `$${(value/1000)}k` }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const timeCtx = document.getElementById('timeChart');
+            if(timeCtx) {
+                new Chart(timeCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: [wrapLabel('Custom P2P'), wrapLabel('iPaaS (Jitterbit)'), wrapLabel('Dedicated Middleware (Agni Link)'), wrapLabel('Dedicated Middleware (CADTALK)')],
+                        datasets: [{
+                            label: 'Estimated Timeline (Months)',
+                            data: [18, 4.5, 1.5, 3],
+                            backgroundColor: [colorPalette.accent1, colorPalette.accent2, colorPalette.secondary, colorPalette.primary],
+                            borderRadius: 4
+                        }]
+                    },
+                     options: { ...commonOptions,
+                        scales: { ...commonOptions.scales, 
+                            y: { ...commonOptions.scales.y, 
+                                title: { display: true, text: 'Months' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const suitabilityCtx = document.getElementById('suitabilityChart');
+            if(suitabilityCtx) {
+                new Chart(suitabilityCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: [wrapLabel('Custom P2P'), wrapLabel('iPaaS (Jitterbit)'), wrapLabel('Middleware (Agni Link)'), wrapLabel('Middleware (CADTALK)')],
+                        datasets: [{
+                            label: 'Suitability Score / 10',
+                            data: [2, 6, 7, 9],
+                            backgroundColor: [colorPalette.accent1, colorPalette.accent2, colorPalette.primary, colorPalette.secondary],
+                             borderRadius: 4
+                        }]
+                    },
+                     options: { ...commonOptions,
+                        indexAxis: 'y',
+                        scales: { ...commonOptions.scales, 
+                            x: { ...commonOptions.scales.x, 
+                                max: 10,
+                                title: { display: true, text: 'Score out of 10' }
+                            },
+                             y: { ...commonOptions.scales.y,
+                                ticks: {
+                                    font: {
+                                        size: 14
+                                    }
+                                }
+                             }
+                        }
+                    }
+                });
+            }
+            
+            const roiCtx = document.getElementById('roiChart');
+            if(roiCtx) {
+                new Chart(roiCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Return', 'Investment'],
+                        datasets: [{
+                            data: [220, 100],
+                            backgroundColor: [colorPalette.secondary, '#e0e6ed'],
+                            borderColor: '#ffffff',
+                            borderWidth: 4,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                             legend: {
+                                display: false
+                            },
+                           tooltip: {
+                                callbacks: {
+                                   title: tooltipTitleCallback,
+                                   label: (context) => `${context.label}: ${context.raw}%`
+                                },
+                                backgroundColor: '#003F5C',
+                                titleFont: { size: 14, weight: 'bold' },
+                                bodyFont: { size: 12 },
+                                padding: 10,
+                                cornerRadius: 4,
+                                displayColors: false
+                            },
+                            title: {
+                                display: true,
+                                text: '220% ROI',
+                                position: 'bottom',
+                                font: {
+                                    size: 24,
+                                    weight: 'bold'
+                                },
+                                color: colorPalette.primary,
+                                padding: { top: -40 }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
